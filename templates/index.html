@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Knapsack Problem</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f9;
+        margin: 0;
+        padding: 0;
+      }
+      .container {
+        width: 60%;
+        margin: 50px auto;
+        padding: 20px;
+        background-color: #fff;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      }
+      h1,
+      h2,
+      h3 {
+        text-align: center;
+        color: #333;
+      }
+      button {
+        display: block;
+        width: 100%;
+        padding: 10px;
+        font-size: 16px;
+        background-color: #5cb85c;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        margin-bottom: 20px;
+      }
+      button:hover {
+        background-color: #4cae4c;
+      }
+      ul {
+        list-style-type: none;
+        padding: 0;
+      }
+      li {
+        background-color: #e7e7e7;
+        padding: 10px;
+        margin-bottom: 5px;
+        border-radius: 5px;
+        font-size: 16px;
+      }
+      li:hover {
+        background-color: #d0d0d0;
+      }
+      footer {
+        text-align: center;
+        margin-top: 20px;
+        color: #aaa;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Knapsack Problem - Algoritma Backtracking</h1>
+
+      <form method="POST">
+        <button type="submit">Hitung Kombinasi Terbaik</button>
+      </form>
+
+      {% if valid_solutions %}
+      <h3>Kombinasi Terbaik dengan Nilai Maksimum:</h3>
+      <ul>
+        <li>Kombinasi: {{ max_solution[0] }} | Nilai Maksimum: {{ max_solution[1] }}</li>
+      </ul>
+      <h2>Semua Kombinasi Valid yang Memenuhi Kapasitas:</h2>
+      <ul>
+        {% for combination, value in valid_solutions %}
+        <li>Kombinasi: {{ combination }} | Nilai: {{ value }}</li>
+        {% endfor %}
+      </ul>
+
+      {% endif %}
+    </div>
+
+    <footer>
+      <p>© 2024 - Algoritma Knapsack Sederhana</p>
+    </footer>
+  </body>
+</html>
